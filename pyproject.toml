@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "knock"
+dynamic = ["version"]
+requires-python = ">= 3.9"
+authors = [
+    {name = "Jeff Cousens"},
+]
+maintainers = [
+    {name = "Jeff Cousens"},
+]
+description = "A minimal Python port-knocking implementation"
+readme = "README.md"
+keywords = ["knock", "port"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet",
+    "Topic :: Security",
+    "Topic :: System :: Networking",
+    "Topic :: System :: Networking :: Firewalls",
+    "Topic :: Utilities",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "build",
+    "twine",
+]
+
+[project.scripts]
+knock = "knock.knock:main"
+
+[project.urls]
+Homepage = "https://github.com/jeffreyc/knock"
+Documentation = "https://github.com/jeffreyc/knock"
+Repository = "https://github.com/jeffreyc/knock.git"
+Issues = "https://github.com/jeffreyc/knock/issues"
+Changelog = "https://github.com/jeffreyc/knock/blob/master/CHANGELOG.md"
+
+[tool.setuptools.dynamic]
+version = {attr = "knock.__version__"}
